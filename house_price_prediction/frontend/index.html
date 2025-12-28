@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHome Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>DreamHome <span class="highlight">Predictor</span></h1>
+            <p>Estimate your property value with AI precision.</p>
+        </header>
+
+        <main class="glass-card">
+            <form id="prediction-form">
+                <div class="form-group">
+                    <label for="area">Area (sqft)</label>
+                    <input type="number" id="area" name="area" placeholder="e.g. 1500" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location" name="location">
+                        <option value="CollgCr">College Creek</option>
+                        <option value="Veenker">Veenker</option>
+                        <option value="Crawfor">Crawford</option>
+                        <option value="NoRidge">Northridge</option>
+                        <option value="Mitchel">Mitchell</option>
+                        <option value="Somerst">Somerset</option>
+                        <option value="NWAmes">Northwest Ames</option>
+                        <option value="OldTown">Old Town</option>
+                        <option value="BrkSide">Brookside</option>
+                        <option value="Sawyer">Sawyer</option>
+                        <option value="NridgHt">Northridge Heights</option>
+                        <option value="NAmes">North Ames</option>
+                        <option value="SawyerW">Sawyer West</option>
+                        <option value="IDOTRR">Iowa DOT and Rail Road</option>
+                        <option value="MeadowV">Meadow Village</option>
+                        <option value="Edwards">Edwards</option>
+                        <option value="Timber">Timberland</option>
+                        <option value="Gilbert">Gilbert</option>
+                        <option value="StoneBr">Stone Brook</option>
+                        <option value="ClearCr">Clear Creek</option>
+                        <option value="NPkVill">Northpark Villa</option>
+                        <option value="Blmngtn">Bloomington Heights</option>
+                        <option value="BrDale">Briardale</option>
+                        <option value="SWISU">South & West of Iowa State University</option>
+                        <option value="Blueste">Bluestem</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="number" id="bedrooms" name="bedrooms" min="1" max="10" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="number" id="bathrooms" name="bathrooms" min="1" max="5" step="0.5" value="2">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Amenities</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="amenities" value="parking">
+                            <span>Parking</span>
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="amenities" value="pool">
+                            <span>Pool</span>
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="amenities" value="fireplace">
+                            <span>Fireplace</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button">Predict Price</button>
+            </form>
+
+            <div id="result" class="result-card hidden">
+                <h2>Estimated Price</h2>
+                <div class="price-display">$<span id="price-value">0</span></div>
+                <p class="confidence">Confidence: <span id="confidence-value"></span></p>
+            </div>
+        </main>
+
+        <section class="insights-section glass-card">
+            <h2>Market Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h3>Price by Neighborhood</h3>
+                    <img src="http://localhost:8000/static/evaluation/price_by_neighborhood.png"
+                        alt="Price by Neighborhood" onerror="this.style.display='none'">
+                </div>
+                <div class="insight-card">
+                    <h3>Key Features (SHAP)</h3>
+                    <img src="http://localhost:8000/static/explainability/Lasso_shap_summary.png" alt="SHAP Summary"
+                        onerror="this.style.display='none'">
+                </div>
+                <div class="insight-card">
+                    <h3>Model Accuracy</h3>
+                    <img src="http://localhost:8000/static/evaluation/Lasso_actual_vs_predicted.png"
+                        alt="Actual vs Predicted" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

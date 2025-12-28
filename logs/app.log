@@ -1,0 +1,74 @@
+2025-12-28 21:03:18,636 - __main__ - INFO - === Starting House Price Prediction Pipeline ===
+2025-12-28 21:03:18,637 - __main__ - INFO - Starting: Model Training
+2025-12-28 21:03:21,098 - __main__ - INFO - Training all models...
+2025-12-28 21:03:21,128 - __main__ - INFO - Training LinearRegression...
+2025-12-28 21:03:21,432 - __main__ - INFO - RMSE: 22751.21, MAE: 14640.45, R2: 0.9325
+2025-12-28 21:03:21,440 - __main__ - INFO - Training Ridge...
+2025-12-28 21:03:21,620 - __main__ - INFO - RMSE: 22692.91, MAE: 14612.05, R2: 0.9329
+2025-12-28 21:03:21,626 - __main__ - INFO - Training Lasso...
+2025-12-28 21:03:22,045 - __main__ - INFO - RMSE: 22455.16, MAE: 13935.75, R2: 0.9343
+2025-12-28 21:03:22,050 - __main__ - INFO - Training RandomForest...
+2025-12-28 21:03:26,763 - __main__ - INFO - RMSE: 29164.25, MAE: 17333.26, R2: 0.8891
+2025-12-28 21:03:26,800 - __main__ - INFO - Training XGBoost...
+2025-12-28 21:03:27,717 - __main__ - INFO - RMSE: 26767.53, MAE: 16417.83, R2: 0.9066
+2025-12-28 21:03:27,735 - __main__ - INFO - === Model Comparison ===
+2025-12-28 21:03:27,744 - __main__ - INFO - 
+              Model  ...        R2
+2             Lasso  ...  0.934262
+1             Ridge  ...  0.932862
+0  LinearRegression  ...  0.932517
+4           XGBoost  ...  0.906588
+3      RandomForest  ...  0.889111
+
+[5 rows x 4 columns]
+2025-12-28 21:03:27,995 - __main__ - INFO - Completed: Model Training
+2025-12-28 21:03:27,995 - __main__ - INFO - Starting: Model Evaluation
+2025-12-28 21:03:32,366 - __main__ - INFO - Completed: Model Evaluation
+2025-12-28 21:03:32,367 - __main__ - INFO - Starting: SHAP Analysis
+2025-12-28 21:03:37,483 - __main__ - INFO - Completed: SHAP Analysis
+2025-12-28 21:03:37,485 - __main__ - INFO - Starting: API Tests
+2025-12-28 21:03:40,919 - __main__ - INFO - Completed: API Tests
+2025-12-28 21:03:40,920 - __main__ - INFO - === Pipeline Completed Successfully ===
+2025-12-28 21:03:40,920 - __main__ - INFO - You can now start the API with: uvicorn house_price_prediction.api.app:app --reload
+2025-12-28 21:11:04,484 - __main__ - INFO - Starting Hyperparameter Tuning for RandomForest...
+2025-12-28 21:11:04,506 - __main__ - INFO - Running GridSearchCV...
+2025-12-28 21:12:44,230 - __main__ - INFO - Best Parameters: {'model__max_depth': 20, 'model__min_samples_split': 2, 'model__n_estimators': 200}
+2025-12-28 21:12:44,320 - __main__ - INFO - Tuned RandomForest - RMSE: 29373.40, R2: 0.8875
+2025-12-28 21:12:44,413 - __main__ - INFO - Saved tuned model.
+2025-12-28 21:18:22,515 - __main__ - INFO - === Starting House Price Prediction Pipeline ===
+2025-12-28 21:18:22,515 - __main__ - INFO - Starting: Model Training
+2025-12-28 21:18:24,431 - __main__ - INFO - Training all models...
+2025-12-28 21:18:24,453 - __main__ - INFO - Training LinearRegression...
+2025-12-28 21:18:24,686 - __main__ - INFO - RMSE: 22751.21, MAE: 14640.45, R2: 0.9325
+2025-12-28 21:18:24,696 - __main__ - INFO - Training Ridge...
+2025-12-28 21:18:24,888 - __main__ - INFO - RMSE: 22692.91, MAE: 14612.05, R2: 0.9329
+2025-12-28 21:18:24,894 - __main__ - INFO - Training Lasso...
+2025-12-28 21:18:25,303 - __main__ - INFO - RMSE: 22455.16, MAE: 13935.75, R2: 0.9343
+2025-12-28 21:18:25,314 - __main__ - INFO - Training RandomForest...
+2025-12-28 21:18:29,992 - __main__ - INFO - RMSE: 29164.25, MAE: 17333.26, R2: 0.8891
+2025-12-28 21:18:30,031 - __main__ - INFO - Training XGBoost...
+2025-12-28 21:18:30,927 - __main__ - INFO - RMSE: 26767.53, MAE: 16417.83, R2: 0.9066
+2025-12-28 21:18:30,945 - __main__ - INFO - === Model Comparison ===
+2025-12-28 21:18:30,955 - __main__ - INFO - 
+              Model  ...        R2
+2             Lasso  ...  0.934262
+1             Ridge  ...  0.932862
+0  LinearRegression  ...  0.932517
+4           XGBoost  ...  0.906588
+3      RandomForest  ...  0.889111
+
+[5 rows x 4 columns]
+2025-12-28 21:18:31,186 - __main__ - INFO - Completed: Model Training
+2025-12-28 21:18:31,187 - __main__ - INFO - Starting: Model Evaluation
+2025-12-28 21:18:36,227 - __main__ - INFO - Completed: Model Evaluation
+2025-12-28 21:18:36,227 - __main__ - INFO - Starting: SHAP Analysis
+2025-12-28 21:18:41,149 - __main__ - INFO - Completed: SHAP Analysis
+2025-12-28 21:18:41,149 - __main__ - INFO - Starting: API Tests
+2025-12-28 21:18:44,347 - __main__ - INFO - Completed: API Tests
+2025-12-28 21:18:44,347 - __main__ - INFO - === Pipeline Completed Successfully ===
+2025-12-28 21:18:44,348 - __main__ - INFO - You can now start the API with: uvicorn house_price_prediction.api.app:app --reload
+2025-12-28 21:21:25,724 - __main__ - INFO - Starting Hyperparameter Tuning for RandomForest...
+2025-12-28 21:21:25,749 - __main__ - INFO - Running GridSearchCV...
+2025-12-28 21:23:16,768 - __main__ - INFO - Best Parameters: {'model__max_depth': 20, 'model__min_samples_split': 2, 'model__n_estimators': 200}
+2025-12-28 21:23:16,869 - __main__ - INFO - Tuned RandomForest - RMSE: 29373.40, R2: 0.8875
+2025-12-28 21:23:16,980 - __main__ - INFO - Saved tuned model.
