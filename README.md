@@ -65,7 +65,7 @@ Open your browser to: `http://localhost:8000/app/index.html`
 
 Alternatively, you can open `house_price_prediction/frontend/index.html` directly in your browser.
 
-![Frontend Interface](frontend_screenshot.png)
+![Frontend Interface](https://github.com/VarsshanCoder/House-Price-Prediction-model/blob/main/house_price_prediction/frontend_screenshot.png)
 
 ## 📊 Model Performance
 The current best model (XGBoost) achieves:
